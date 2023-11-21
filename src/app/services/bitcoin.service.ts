@@ -13,7 +13,6 @@ export class BitcoinService {
   getRate(coins: number): Observable<number> {
     const apiUrl = `${this.bitcoinApiUrl}?currency=USD&value=${coins}`;
     
-    console.log('hey', this.http.get<number>(apiUrl));
     return this.http.get<number>(apiUrl);
     
   }

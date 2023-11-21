@@ -11,6 +11,7 @@ export class HomeComponent implements OnInit {
   userName: string = '';
   userCoins: number = 0;
   bitcoinRate: number = 0;
+ 
 
   constructor(private userService: UserService, private bitcoinService: BitcoinService) { }
 
