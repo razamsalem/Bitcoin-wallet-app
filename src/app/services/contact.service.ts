@@ -17,7 +17,6 @@ export class ContactService {
     public contacts$ = this._contacts$.asObservable()
 
     constructor() {
-        // Handling Demo Data, fetching from storage || saving to storage 
         const contacts = JSON.parse(localStorage.getItem(ENTITY) || 'null')
         if (!contacts || contacts.length === 0) {
             localStorage.setItem(ENTITY, JSON.stringify(this._createContacts()))
@@ -241,7 +240,7 @@ export class ContactService {
                 "email": "lillyconner@renovize.com",
                 "phone": "+1 (842) 587-3812"
             }
-        ];
+        ]
         return contacts
     }
 
