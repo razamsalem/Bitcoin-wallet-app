@@ -1,0 +1,19 @@
+.contacts-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 25rem;
+    height: 50vh;
+    color: #F7E6C4;
+    text-shadow: 10px 10px 25px #F2921D,
+        -10px 10px 25px #e5b300,
+        -10px -10px 25px #F2CD5C,
+        10px -10px 25px #F2CD5C;
+
+    text-align: center;
+    padding: 1em;
+    border-radius: 8px;
+    background: linear-gradient(45deg, #F2921D, #e5b300, #F2CD5C);
+
+}

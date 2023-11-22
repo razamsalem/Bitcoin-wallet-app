@@ -8,3 +8,16 @@
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     grid-gap: 10px;
 }
+
+.card-layout {
+    display: grid;
+    grid-template-columns: 60px 1fr 60px;
+
+    >*.full {
+        grid-column: 1 / -1;
+    }
+
+    >*:not(.full) {
+        grid-column: 2;
+    }
+}

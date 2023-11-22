@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { UserService } from '../../services/user.service';
 import { BitcoinService } from '../../services/bitcoin.service'; 
 
@@ -11,6 +11,7 @@ export class HomeComponent implements OnInit {
   userName: string = '';
   userCoins: number = 0;
   bitcoinRate: number = 0;
+  formattedUserCoins: string = '';
  
 
   constructor(private userService: UserService, private bitcoinService: BitcoinService) { }
@@ -20,6 +21,8 @@ export class HomeComponent implements OnInit {
     this.userName = user.name;
     this.userCoins = user.coins;
 
+    this.formatUserCoins();
+
     const coinsToConvert = this.userCoins;
     this.bitcoinService.getRate(coinsToConvert).subscribe(
       bitcoinRate => {
@@ -28,6 +31,11 @@ export class HomeComponent implements OnInit {
       error => {
         console.error('Error fetching Bitcoin rate:', error);
       }
-    );
+    )
   }
+
+    formatUserCoins() {
+      this.formattedUserCoins = this.userCoins.toFixed(2);
+    }
+
 }
