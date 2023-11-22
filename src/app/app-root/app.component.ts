@@ -8,10 +8,11 @@ import { Subscription, take } from 'rxjs';
   styleUrl: './app.component.scss'
 })
 export class AppComponent implements OnInit{
-  title = 'BITCoin App'
   // constructor(private contactService: ContactService) { }
   private contactService = inject(ContactService)
   subscription!: Subscription
+  isHomePage: boolean = true
+
 
   ngOnInit() {
     this.subscription = this.contactService.loadContacts()
@@ -19,7 +20,10 @@ export class AppComponent implements OnInit{
       .subscribe({
         error: err => console.log('err', err)
       })
-    
+  }
+
+  onEnterContactPage():void {
+    this.isHomePage = false;
   }
 
 }

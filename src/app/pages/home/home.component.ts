@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Output, OnInit, EventEmitter } from '@angular/core';
 import { UserService } from '../../services/user.service';
 import { BitcoinService } from '../../services/bitcoin.service'; 
 
@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
   userCoins: number = 0;
   bitcoinRate: number = 0;
   formattedUserCoins: string = '';
- 
+  @Output() exitHomePage = new EventEmitter<void>()
 
   constructor(private userService: UserService, private bitcoinService: BitcoinService) { }
 
@@ -36,6 +36,10 @@ export class HomeComponent implements OnInit {
 
     formatUserCoins() {
       this.formattedUserCoins = this.userCoins.toFixed(2);
+    }
+
+    onEnterContactPage(): void {
+      this.exitHomePage.emit()
     }
 
 }

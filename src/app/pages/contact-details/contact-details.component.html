@@ -1,5 +1,7 @@
 <div class="contact-details">
-    <h1>{{selectedContact.name}}</h1>
     <img src="https://robohash.org/{{selectedContact._id}}?set=set5" alt="Contact profile picture">
+    <h2>{{selectedContact.name}}</h2>
+    <h1>{{selectedContact.phone}}</h1>
+    <h1>{{selectedContact.email}}</h1>
 </div>
 <button (click)="onSelectedContact()">Go back</button>
