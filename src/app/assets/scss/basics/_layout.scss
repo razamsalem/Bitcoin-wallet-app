@@ -9,6 +9,19 @@
     grid-gap: 10px;
 }
 
+.main-layout {
+    display: grid;
+    grid-template-columns: minmax(64px, 1fr) 1fr minmax(64px, 1fr);
+
+    >*.full {
+        grid-column: 1 / -1;
+    }
+
+    >*:not(.full) {
+        grid-column: 2;
+    }
+}
+
 .card-layout {
     display: grid;
     grid-template-columns: 60px 1fr 60px;
