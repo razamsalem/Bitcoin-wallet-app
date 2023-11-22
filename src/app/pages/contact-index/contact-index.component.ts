@@ -9,10 +9,20 @@ import { Contact } from '../../models/contact.model';
 })
 export class ContactIndexComponent implements OnInit {
   contactService = inject(ContactService)
+  selectedContact: Contact | null = null;
   contacts!: Contact[]
 
   ngOnInit(): void {
     this.contactService.contacts$
       .subscribe(contacts => this.contacts = contacts)
   }
+
+  onSelectedContact(contact: Contact): void {
+    this.selectedContact = contact;
+  }
+
+  onUnSelectedContact(): void {
+    this.selectedContact = null;
+  }
+
 }

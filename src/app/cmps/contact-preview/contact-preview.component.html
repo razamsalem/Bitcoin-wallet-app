@@ -1,6 +1,6 @@
-<section class="contact-preview">
+<section (click)="onSelectedContact()" class="contact-preview">
     <div class="info flex">
-        <img src="https://robohash.org/{{contact._id}}?set=set5" alt="User profile picture">
+        <img src="https://robohash.org/{{contact._id}}?set=set5" alt="Contact profile picture">
         <div class="data">
             <p>{{contact.name}}</p>
         </div>

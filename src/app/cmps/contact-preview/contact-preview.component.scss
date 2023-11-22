@@ -1,13 +1,15 @@
 @import "../../assets/scss/global.scss";
 
 .contact-preview {
+    cursor: pointer;
+
     .info {
-            background-color: #e5b30030;
-            border: 1px solid #e5b300;
-            border-radius: rem(8px);
-            align-items: center;
-            padding: rem(4px) rem(12px);
-            margin-block: rem(5px);
+        background-color: #e5b30030;
+        border: 1px solid #e5b300;
+        border-radius: rem(8px);
+        align-items: center;
+        padding: rem(4px) rem(12px);
+        margin-block: rem(5px);
 
         img {
             width: rem(50px);
