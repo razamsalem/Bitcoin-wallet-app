@@ -10,8 +10,6 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrl: './contact-details.component.scss'
 })
 export class ContactDetailsComponent {
-  @Output() back = new EventEmitter()
-
   private contactService = inject(ContactService)
   private router = inject(Router)
   private route = inject(ActivatedRoute)
