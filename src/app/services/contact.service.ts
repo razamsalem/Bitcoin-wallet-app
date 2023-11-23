@@ -82,7 +82,7 @@ export class ContactService {
         return contact._id ? this._updateContact(contact) : this._addContact(contact)
     }
 
-    public getEmptyContact() {
+    public getEmptyContact(): Partial<Contact>{
         return {
             name: '',
             email: '',
@@ -108,7 +108,9 @@ export class ContactService {
             .pipe(
                 tap(newContact => {
                     const contacts = this._contacts$.value
-                    this._contacts$.next([...contacts, newContact])
+                    contacts.push(newContact)
+                    this._contacts$.next([...contacts])
+                    return newContact
                 }),
                 retry(1),
                 catchError(this._handleError)

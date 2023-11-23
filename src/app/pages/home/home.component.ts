@@ -38,8 +38,4 @@ export class HomeComponent implements OnInit {
       this.formattedUserCoins = this.userCoins.toFixed(2);
     }
 
-    onEnterContactPage(): void {
-      this.exitHomePage.emit()
-    }
-
 }

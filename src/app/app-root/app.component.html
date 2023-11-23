@@ -1,4 +1,11 @@
 <section class="app">
-  <app-home *ngIf="isHomePage" (exitHomePage)="onEnterContactPage()"></app-home>
-  <app-contact-index *ngIf="!isHomePage"></app-contact-index>
+
+  <!-- Header -->
+
+  <main>
+    <router-outlet></router-outlet>
+  </main>
+
+  <!-- Footer -->
+
 </section>

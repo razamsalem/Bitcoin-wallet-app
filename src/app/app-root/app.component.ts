@@ -11,8 +11,6 @@ export class AppComponent implements OnInit{
   // constructor(private contactService: ContactService) { }
   private contactService = inject(ContactService)
   subscription!: Subscription
-  isHomePage: boolean = true
-
 
   ngOnInit() {
     this.subscription = this.contactService.loadContacts()
@@ -21,9 +19,4 @@ export class AppComponent implements OnInit{
         error: err => console.log('err', err)
       })
   }
-
-  onEnterContactPage():void {
-    this.isHomePage = false;
-  }
-
 }

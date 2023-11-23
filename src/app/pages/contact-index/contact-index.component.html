@@ -1,10 +1,5 @@
 <section class="contacts-container main-layout">
-    <div *ngIf="!selectedContact" class="contact">
-        <app-contact-filter/>
-        <app-contact-list (selectContact)="onSelectedContact($event)" [contacts]="contacts"></app-contact-list>
-    </div>
-
-    <div *ngIf="selectedContact" class="contact-details-container">
-        <app-contact-details (unSelectedContact)="onUnSelectedContact()" [selectedContact]="selectedContact" />
-    </div>
+    <button routerLink="/contact/edit">Add Contact</button>
+    <app-contact-filter />
+    <app-contact-list [contacts]="contacts"></app-contact-list>
 </section>

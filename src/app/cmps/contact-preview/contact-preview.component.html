@@ -1,8 +1,10 @@
-<section (click)="onSelectedContact()" class="contact-preview">
+<a [routerLink]="['/contact', contact._id]" class="contact-preview">
     <div class="info flex">
         <img src="https://robohash.org/{{contact._id}}?set=set5" alt="Contact profile picture">
         <div class="data">
             <p>{{contact.name}}</p>
         </div>
     </div>
-</section>
+</a>
+
+<a [routerLink]="['/contact/edit', contact._id]">Edit</a>
