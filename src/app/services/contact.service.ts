@@ -69,9 +69,10 @@ export class ContactService {
         return from(storageService.remove(ENTITY, id))
             .pipe(
                 tap(() => {
-                    let contacts = this._contacts$.value
-                    contacts = contacts.filter(contact => contact._id !== id)
-                    this._contacts$.next(contacts)
+                    const contacts = this._contacts$.value
+                    const contactIdx = contacts.findIndex(contact => contact._id === id)
+                    contacts.splice(contactIdx, 1)
+                    this._contacts$.next([...contacts])
                 }),
                 retry(1),
                 catchError(this._handleError)

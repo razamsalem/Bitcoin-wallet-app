@@ -1,5 +1,6 @@
 <section class="contacts-container main-layout">
+    <button routerLink="/stats">Stats</button>
     <button routerLink="/contact/edit">Add Contact</button>
     <app-contact-filter />
-    <app-contact-list [contacts]="contacts"></app-contact-list>
+    <app-contact-list (remove)="onRemoveContact($event)" [contacts]="contacts"></app-contact-list>
 </section>

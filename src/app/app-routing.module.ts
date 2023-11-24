@@ -5,9 +5,10 @@ import { ContactIndexComponent } from './pages/contact-index/contact-index.compo
 import { ContactDetailsComponent } from './pages/contact-details/contact-details.component';
 import { ContactEditComponent } from './pages/contact-edit/contact-edit.component';
 import { contactResolver } from './resolvers/contact.resolver';
+import { StatsComponent } from './pages/stats/stats.component';
 
 const routes: Routes = [
-  { path: 'contact/edit/:id', component: ContactEditComponent,  resolve: { contact: contactResolver } },
+  { path: 'contact/edit/:id', component: ContactEditComponent, resolve: { contact: contactResolver } },
   { path: 'contact/edit', component: ContactEditComponent },
   {
     path: 'contact/:id',
@@ -15,6 +16,7 @@ const routes: Routes = [
     resolve: { contact: contactResolver }
   },
   { path: 'contact', component: ContactIndexComponent },
+  { path: 'stats', component: StatsComponent },
   { path: '', component: HomeComponent }
 ]
 

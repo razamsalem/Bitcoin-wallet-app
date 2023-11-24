@@ -13,6 +13,12 @@ import { ContactEditComponent } from './pages/contact-edit/contact-edit.componen
 import { ContactDetailsComponent } from './pages/contact-details/contact-details.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { StatsComponent } from './pages/stats/stats.component';
+import { NgChartsModule } from 'ng2-charts';
+import { LineComponent } from './cmps/line/line.component';
+import { BarComponent } from './cmps/bar/bar.component';
+import { RadarComponent } from './cmps/radar/radar.component';
+import { CalcComponent } from './cmps/calc/calc.component';
 
 @NgModule({
   declarations: [
@@ -24,13 +30,19 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     ContactIndexComponent,
     ContactEditComponent,
-    ContactDetailsComponent
+    ContactDetailsComponent,
+    StatsComponent,
+    LineComponent,
+    BarComponent,
+    RadarComponent,
+    CalcComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

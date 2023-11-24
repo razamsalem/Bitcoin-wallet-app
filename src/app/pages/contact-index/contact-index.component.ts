@@ -25,4 +25,11 @@ export class ContactIndexComponent implements OnInit {
     this.selectedContact = null;
   }
 
+  onRemoveContact(contactId: string) {
+    this.contactService.deleteContact(contactId)
+        .subscribe({
+            error: err => console.log('err:', err)
+        })
+}
+
 }
