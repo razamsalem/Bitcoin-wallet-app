@@ -14,6 +14,7 @@ export class ContactEditComponent {
   private router = inject(Router)
   private route = inject(ActivatedRoute)
 
+  title: string = ''
   destroySubject$ = new Subject<void>()
   contact = this.contactService.getEmptyContact()
 
@@ -26,6 +27,7 @@ export class ContactEditComponent {
       .subscribe(contact => {
         this.contact = contact
       })
+      this.title = 'Add Contact'
   }
 
   onSaveContact() {

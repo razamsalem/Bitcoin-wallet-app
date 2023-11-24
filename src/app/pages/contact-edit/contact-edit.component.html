@@ -1,22 +1,30 @@
 <section class="contact-edit">
-    <h2>{{'Add'}} Contact</h2>
-    <form (ngSubmit)="onSaveContact()">
-        <label for="name">Full name</label>
-        <input [(ngModel)]="contact.name" type="text" name="name" id="name">
+    <app-profile-header [title]="title"></app-profile-header>
+    <div class="relative-container">
+        <div class="edit-area">
+            <h2>{{'Add'}} Contact</h2>
+            <form (ngSubmit)="onSaveContact()">
+                <label for="name">Full name</label>
+                <input [(ngModel)]="contact.name" type="text" name="name" id="name">
 
-        <label for="phoneNumber">Phone number</label>
-        <input [(ngModel)]="contact.phone" type="text" name="phoneNumber" id="phoneNumber">
+                <label for="phoneNumber">Phone number</label>
+                <input [(ngModel)]="contact.phone" type="text" name="phoneNumber" id="phoneNumber">
 
-        <label for="email">Email</label>
-        <input [(ngModel)]="contact.email" type="email" name="email" id="email">
+                <label for="email">Email</label>
+                <input [(ngModel)]="contact.email" type="email" name="email" id="email">
 
-        <label for="age">Age</label>
-        <input [(ngModel)]="contact.age" type="number" name="age" id="age">
+                <label for="age">Age</label>
+                <input [(ngModel)]="contact.age" type="number" name="age" id="age">
 
-        <label for="address">Address</label>
-        <input [(ngModel)]="contact.address" type="text" name="address" id="address">
+                <label for="address">Address</label>
+                <input [(ngModel)]="contact.address" type="text" name="address" id="address">
 
-        <button>Save</button>
-    </form>
-    <button (click)="onBack()">Back</button>
+                <button>Save</button>
+            </form>
+        </div>
+        <button (click)="onBack()" class="back-btn" title="Go back">
+            <i class="fa-solid fa-share fa-flip-horizontal"></i>
+        </button>
+    </div>
+
 </section>
