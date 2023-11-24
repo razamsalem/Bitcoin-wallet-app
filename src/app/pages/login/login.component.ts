@@ -2,23 +2,19 @@ import { Component, Input, Output, OnInit, EventEmitter } from '@angular/core';
 import { UserService } from '../../services/user.service';
 import { BitcoinService } from '../../services/bitcoin.service';
 
+
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrl: './login.component.scss'
 })
-export class HomeComponent implements OnInit {
+export class LoginComponent {
+  @Output() login = new EventEmitter<boolean>()
   title = 'My Card'
   userName: string = '';
   userCoins: number = 0;
-  userAddress: string = '';
-  userAge: number = 0;
-  userPhone: string = '';
-  userEmail: string = '';
-
   bitcoinRate: number = 0;
   formattedUserCoins: string = '';
-  @Output() exitHomePage = new EventEmitter<void>()
 
   constructor(private userService: UserService, private bitcoinService: BitcoinService) { }
 
@@ -26,10 +22,6 @@ export class HomeComponent implements OnInit {
     const user = this.userService.getUser();
     this.userName = user.name;
     this.userCoins = user.coins;
-    this.userAddress = user.address;
-    this.userAge = user.age;
-    this.userPhone = user.phone;
-    this.userEmail = user.email;
 
     this.formatUserCoins();
 
@@ -39,7 +31,7 @@ export class HomeComponent implements OnInit {
         this.bitcoinRate = bitcoinRate;
       },
       error => {
-        console.error('Error fetching Bitcoin rate:', error);
+        console.error('Error fetching Bitcoin rate:', error)
       }
     )
   }
@@ -49,7 +41,7 @@ export class HomeComponent implements OnInit {
   }
 
   onLogin() {
-
+    this.login.emit(true);
   }
 
 }

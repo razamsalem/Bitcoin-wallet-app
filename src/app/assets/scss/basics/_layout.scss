@@ -38,3 +38,16 @@
         grid-column: 2;
     }
 }
+
+.home-layout {
+    display: grid;
+    grid-template-columns: .7fr 1fr;
+
+    .left {
+        grid-column: 1;
+    }
+
+    .right {
+        grid-column: 2;
+    }
+}

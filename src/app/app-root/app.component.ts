@@ -7,10 +7,11 @@ import { Subscription, take } from 'rxjs';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
   // constructor(private contactService: ContactService) { }
   private contactService = inject(ContactService)
   subscription!: Subscription
+  isLogin = false
 
   ngOnInit() {
     this.subscription = this.contactService.loadContacts()
@@ -18,5 +19,9 @@ export class AppComponent implements OnInit{
       .subscribe({
         error: err => console.log('err', err)
       })
+  }
+
+  onLogin() {
+    this.isLogin = true
   }
 }

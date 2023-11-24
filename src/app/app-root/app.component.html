@@ -1,4 +1,9 @@
-<section class="app main-layout">
+<section *ngIf="!isLogin" class="login-page">
+  <app-login (login)="onLogin()"></app-login>
+</section>
+
+
+<section *ngIf="isLogin" class="app main-layout">
 
   <app-header class="nav"></app-header>
 

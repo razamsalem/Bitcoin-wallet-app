@@ -20,6 +20,7 @@ import { BarComponent } from './cmps/bar/bar.component';
 import { RadarComponent } from './cmps/radar/radar.component';
 import { HeaderComponent } from './cmps/header/header.component';
 import { ProfileHeaderComponent } from './cmps/profile-header/profile-header.component';
+import { LoginComponent } from './pages/login/login.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { ProfileHeaderComponent } from './cmps/profile-header/profile-header.com
     BarComponent,
     RadarComponent,
     HeaderComponent,
-    ProfileHeaderComponent
+    ProfileHeaderComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

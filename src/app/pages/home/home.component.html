@@ -1,12 +1,20 @@
 <section class="home-container">
     <app-profile-header [title]="title"></app-profile-header>
-    <div class="user-profile card-layout">
-        <h1>Welcome, <span>{{ userName }}</span>!</h1>
-        <img src="https://www.pngall.com/wp-content/uploads/5/User-Profile-PNG-Image.png" alt="">
-        <div class="wallet flex">
-            <p>Coins <span class="bold"> {{ formattedUserCoins }} </span></p>
-            <p>BTC <span class="bold"> {{ bitcoinRate }} </span></p>
+    <div class="card">
+        <div class="home-layout">
+            <div class="user flex left">
+                <img src="https://www.pngall.com/wp-content/uploads/5/User-Profile-PNG-Image.png" alt="">
+                <h1 class="name">{{userName}}</h1>
+                <h1 class="age">{{userAge}} years old</h1>
+            </div>
+
+            <div class="info flex right">
+                <h1 class="user-detail flex"><i class="fa-solid fa-house-chimney icon"></i> {{userAddress}}</h1>
+                <h1 class="user-detail flex"><i class="fa-solid fa-phone icon"></i> {{userPhone}}</h1>
+                <h1 class="user-detail flex"><i class="fa-solid fa-at icon"></i> {{userEmail}}</h1>
+                <h1 class="user-detail flex"><i class="fa-solid fa-wallet icon"></i> ${{ formattedUserCoins }}</h1>
+                <h1 class="user-detail flex"><i class="fa-brands fa-bitcoin icon"></i> {{ bitcoinRate }}</h1>
+            </div>
         </div>
-        <button routerLink="/contact">Contacts</button>
     </div>
 </section>
