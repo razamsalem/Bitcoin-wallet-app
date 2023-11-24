@@ -18,7 +18,6 @@ export class ContactEditComponent {
   contact = this.contactService.getEmptyContact()
 
   ngOnInit() {
-
     this.route.data
       .pipe(
         map(data => data['contact']),
@@ -27,16 +26,6 @@ export class ContactEditComponent {
       .subscribe(contact => {
         this.contact = contact
       })
-
-    // this.route.params
-    //   .pipe(
-    //     takeUntil(this.destroySubject$),
-    //     map(params => params['id']),
-    //     filter(id => id),
-    //     switchMap(id => this.contactService.getContactById(id))
-    //   ).subscribe(contact => {
-    //     this.contact = contact
-    //   })
   }
 
   onSaveContact() {
