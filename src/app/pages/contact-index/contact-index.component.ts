@@ -8,6 +8,7 @@ import { Contact } from '../../models/contact.model';
   styleUrl: './contact-index.component.scss'
 })
 export class ContactIndexComponent implements OnInit {
+  title = 'Contacts'
   contactService = inject(ContactService)
   selectedContact: Contact | null = null;
   contacts!: Contact[]

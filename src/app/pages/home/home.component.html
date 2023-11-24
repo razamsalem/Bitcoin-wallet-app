@@ -1,9 +1,12 @@
-<div class="user-profile card-layout">
-    <h1>Welcome, <span>{{ userName }}</span>!</h1>
-    <img src="https://www.pngall.com/wp-content/uploads/5/User-Profile-PNG-Image.png" alt="">
-    <div class="wallet flex">
-        <p>Coins <span class="bold"> {{ formattedUserCoins }} </span></p>
-        <p>BTC <span class="bold"> {{ bitcoinRate }} </span></p>
+<section class="home-container">
+    <app-profile-header [title]="title"></app-profile-header>
+    <div class="user-profile card-layout">
+        <h1>Welcome, <span>{{ userName }}</span>!</h1>
+        <img src="https://www.pngall.com/wp-content/uploads/5/User-Profile-PNG-Image.png" alt="">
+        <div class="wallet flex">
+            <p>Coins <span class="bold"> {{ formattedUserCoins }} </span></p>
+            <p>BTC <span class="bold"> {{ bitcoinRate }} </span></p>
+        </div>
+        <button routerLink="/contact">Contacts</button>
     </div>
-    <button routerLink="/contact">Contacts</button>
-</div>
+</section>

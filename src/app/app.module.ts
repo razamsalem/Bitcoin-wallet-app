@@ -18,7 +18,8 @@ import { NgChartsModule } from 'ng2-charts';
 import { LineComponent } from './cmps/line/line.component';
 import { BarComponent } from './cmps/bar/bar.component';
 import { RadarComponent } from './cmps/radar/radar.component';
-import { CalcComponent } from './cmps/calc/calc.component';
+import { HeaderComponent } from './cmps/header/header.component';
+import { ProfileHeaderComponent } from './cmps/profile-header/profile-header.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { CalcComponent } from './cmps/calc/calc.component';
     LineComponent,
     BarComponent,
     RadarComponent,
-    CalcComponent
+    HeaderComponent,
+    ProfileHeaderComponent
   ],
   imports: [
     BrowserModule,

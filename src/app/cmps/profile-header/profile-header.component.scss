@@ -1,0 +1,40 @@
+.profile-header {
+    justify-content: space-between;
+    color: #00719c;
+    text-shadow: 2px 4px 5px rgba(0,0,0,0.3);
+    padding-block-end: 1rem; 
+    border-bottom: 1px solid #00719c;
+    margin-block-end: 1rem;
+
+    .title {
+        h1 {
+            font-size: 28px;
+            font-weight: 500;
+            cursor: default;
+
+            &:hover {
+                text-shadow: 2px 7px 5px rgba(0,0,0,0.3);
+            }
+        }
+    }
+
+    .user-info {
+        gap: 1rem;
+        align-items: center;
+
+        a {
+            cursor: pointer;
+            font-size: 19px;
+            transition: box-shadow 0.6;
+
+            &:hover {
+                text-shadow: 2px 7px 5px rgba(0,0,0,0.3);
+            }
+        }
+
+        img {
+            cursor: pointer;
+            width: 45px;
+        }
+    }
+}

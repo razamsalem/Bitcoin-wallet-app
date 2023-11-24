@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CalcComponent } from './calc.component';
+import { HeaderComponent } from './header.component';
 
-describe('CalcComponent', () => {
-  let component: CalcComponent;
-  let fixture: ComponentFixture<CalcComponent>;
+describe('HeaderComponent', () => {
+  let component: HeaderComponent;
+  let fixture: ComponentFixture<HeaderComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [CalcComponent]
+      declarations: [HeaderComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(CalcComponent);
+    fixture = TestBed.createComponent(HeaderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

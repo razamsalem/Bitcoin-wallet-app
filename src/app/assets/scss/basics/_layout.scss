@@ -11,7 +11,7 @@
 
 .main-layout {
     display: grid;
-    grid-template-columns: minmax(64px, 1fr) 1fr minmax(64px, 1fr);
+    grid-template-columns: rem(220px) 1fr;
 
     >*.full {
         grid-column: 1 / -1;
@@ -19,6 +19,10 @@
 
     >*:not(.full) {
         grid-column: 2;
+    }
+
+    >*.nav {
+        grid-column: 1;
     }
 }
 

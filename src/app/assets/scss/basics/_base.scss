@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 * {
     box-sizing: border-box;
@@ -13,12 +14,10 @@ html {
 body {
     margin: 0;
     min-height: 100vh;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
-        "Droid Sans", "Helvetica Neue", sans-serif;
+    font-family: 'Poppins', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background: url('https://static.vecteezy.com/system/resources/previews/031/087/427/non_2x/abstract-golden-background-free-photo.jpg') center/cover;
-    backdrop-filter: blur(8px);
+    background-color: #001f2b;
 }
 
 img {
@@ -40,9 +39,6 @@ p {
 a {
     text-decoration: none;
     color: inherit;
-    &:hover {
-        text-decoration: underline;
-    }
 }
 
 button {
@@ -58,6 +54,3 @@ input {
     font-family: inherit;
     text-align: inherit;
 }
-
-
-

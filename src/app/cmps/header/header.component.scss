@@ -1,0 +1,39 @@
+.app-header {
+    flex-direction: column;
+    padding: 1em;
+    background-color: #001f2b;
+    color: #00719c;
+
+    .logo {
+        margin-block-end: 1em;
+        font-size: 28px;
+        font-weight: 600;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 1em;
+
+        a {
+
+            padding: .5em;
+
+            &:not(:last-child) {
+                margin-inline-end: 10px;
+            }
+
+            &.active {
+                background-color: #00415a;
+                color: #fff;
+                padding: .5em;
+                border: 1px solid #fff;
+                border-radius: 12px;
+                font-weight: 500;
+            }
+
+            &:hover {
+                color: #fff;
+            }
+        }
+    }
+}

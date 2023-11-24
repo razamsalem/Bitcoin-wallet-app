@@ -8,6 +8,7 @@ import { BitcoinService } from '../../services/bitcoin.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  title = 'My Card'
   userName: string = '';
   userCoins: number = 0;
   bitcoinRate: number = 0;
