@@ -1,4 +1,4 @@
-<div class="contact-details">
+<div *ngIf="contact$|async as contact" class="contact-details">
     <img src="https://robohash.org/{{contact?._id}}?set=set5" alt="Contact profile picture">
     <h2>{{contact?.name}}</h2>
     <h1>{{contact?.phone}}</h1>

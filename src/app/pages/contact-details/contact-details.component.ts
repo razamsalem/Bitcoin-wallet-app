@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
 import { Contact } from '../../models/contact.model';
 import { ContactService } from '../../services/contact.service';
-import { Observable, lastValueFrom, switchMap } from 'rxjs';
+import { Observable, lastValueFrom, map, switchMap } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -18,6 +18,8 @@ export class ContactDetailsComponent {
   contact$!: Observable<Contact>
 
   async ngOnInit(): Promise<void> {
+
+    this.contact$ = this.route.data.pipe(map(data => data['contact']))
 
     // this.contact$ = this.route.params.pipe(
     //   switchMap(params => this.contactService.getContactById(params['id']))
