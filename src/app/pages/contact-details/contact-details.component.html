@@ -1,9 +1,21 @@
 <div *ngIf="contact$|async as contact" class="contact-details">
-    <img src="https://robohash.org/{{contact?._id}}?set=set5" alt="Contact profile picture">
-    <h2>{{contact?.name}}</h2>
-    <h1>{{contact?.phone}}</h1>
-    <h1>{{contact?.email}}</h1>
-    <h1>{{contact?.address}}</h1>
-    <h1>{{contact?.age}}</h1>
+    <app-profile-header [title]="title"></app-profile-header>
+    <div class="relative-container">
+        <div class="card">
+            <div class="home-layout">
+                <div class="user flex left">
+                    <img src="https://robohash.org/{{contact._id}}?set=set5" alt="Contact profile picture">
+                    <h1 class="name">{{contact.name}}</h1>
+                    <h1 class="age">{{contact.age}} years old</h1>
+                </div>
+
+                <div class="info flex right">
+                    <h1 class="user-detail flex"><i class="fa-solid fa-house-chimney icon"></i> {{contact.address}}</h1>
+                    <h1 class="user-detail flex"><i class="fa-solid fa-phone icon"></i> {{contact.phone}}</h1>
+                    <h1 class="user-detail flex"><i class="fa-solid fa-at icon"></i> {{contact.email}}</h1>
+                </div>
+            </div>
+        </div>
+        <button (click)="onBack()" class="back-btn"><i class="fa-solid fa-share fa-flip-horizontal"></i></button>
+    </div>
 </div>
-<button (click)="onBack()">Go back</button>

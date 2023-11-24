@@ -1,0 +1,76 @@
+.contact-details {
+    background-color: #00415a;
+    min-height: 100vh;
+    padding: 1rem;
+
+    .relative-container {
+        position: relative;
+
+        .back-btn {
+            position: absolute;
+            top: 0;
+            font-size: 50px;
+
+            background: none;
+            border: none;
+            color: #00719c;
+            transition: color .2s;
+
+            &:hover {
+                color: #001f2b;
+            }
+        }
+    }
+
+    .card {
+            position: relative; 
+            padding: 2rem;
+            margin: 5rem auto;
+            width: 50vw;
+            height: 50vh;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    
+            &::before {
+                content: '';
+                position: absolute;
+                top: 5%;
+                bottom: 5%;
+                left: 50%; 
+                width: 2px;
+                background-color: #00415a; 
+                transform: translateX(-50%);
+            }
+
+        .user {
+            flex-direction: column;
+            align-items: center;
+
+            .name {
+                font-size: 26px;
+                letter-spacing: 1px;
+            }
+
+            img {
+                width: 300px;
+            }
+        }
+
+        .info {
+            margin-block-start: 1rem;
+            margin-inline-start: 8rem;
+            flex-direction: column;
+
+            .user-detail {
+                align-items: center;
+                font-size: 1rem;
+                .icon {
+                    color: #00415a;
+                    font-size: .9rem;
+                }
+            }
+        }
+    }
+
+}

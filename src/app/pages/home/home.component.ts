@@ -47,9 +47,4 @@ export class HomeComponent implements OnInit {
   formatUserCoins() {
     this.formattedUserCoins = this.userCoins.toFixed(2);
   }
-
-  onLogin() {
-
-  }
-
 }

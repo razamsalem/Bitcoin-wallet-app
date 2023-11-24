@@ -9,15 +9,15 @@ export class UserService {
 
   getUser() {
     const user = {
-      name: "Ochoa Hyde",
+      name: "Alex Morgan",
       coins: 100,
       moves: [],
       age: 32,
       address: '1084 Branch Road, FL',
       phone: '904-379-5482',
-      email: 'ochoahyde207@gmail.com',
-    };
+      email: 'alexmorgan207@gmail.com',
+    }
 
-    return user;
+    return user
   }
 }
