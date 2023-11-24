@@ -1,10 +1,12 @@
-<a [routerLink]="['/contact', contact._id]" class="contact-preview">
+<section [routerLink]="['/contact', contact._id]" class="contact-preview">
     <div class="info flex">
         <img src="https://robohash.org/{{contact._id}}?set=set5" alt="Contact profile picture">
         <div class="data">
             <p>{{contact.name}}</p>
         </div>
+        <div class="hidden-btns">
+            <button (click)="onRemoveContact($event)" class="remove-btn"><i class="fa-solid fa-xmark"></i></button>
+            <button (click)="onEditContact($event)" class="edit-btn"><i class="fa-solid fa-user-pen"></i></button>
+        </div>
     </div>
-</a>
-<button (click)="onRemoveContact()" class="remove-btn">Remove</button>
-<a [routerLink]="['/contact/edit', contact._id]">Edit</a>
+</section>

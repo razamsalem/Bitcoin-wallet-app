@@ -1,10 +1,11 @@
 @import "../../assets/scss/global.scss";
 
 .contact-preview {
+    position: relative;
     cursor: pointer;
 
     .info {
-        background-color: #e5b30030;
+        background-color: #fff;
         border: 1px solid #e5b300;
         border-radius: rem(8px);
         align-items: center;
@@ -15,5 +16,54 @@
             width: rem(50px);
             margin-inline-end: rem(12px);
         }
+    }
+
+    .hidden-btns {
+        position: absolute;
+        right: -10px;
+        display: flex;
+        gap: 10px;
+        color: #001f2b;
+        opacity: 0;
+        transition-duration: 0.3s;
+        transition-property: right, opacity;
+
+        .remove-btn {
+            width: 2em;
+            height: 2em;
+            background-color: inherit;
+            border-radius: 100%;
+            border: 1px solid #001f2b;
+            transition: 0.15s;
+            cursor: pointer;
+            &:hover {
+                background-color: orangered;
+                border: none;
+                color: white;
+            }
+        }
+
+        .edit-btn {
+            width: 2em;
+            height: 2em;
+            background-color: inherit;
+            border-radius: 100%;
+            border: 1px solid #001f2b;
+            transition: 0.15s;
+            cursor: pointer;
+            &:hover {
+                background-color: #001f2b;
+                color: white;
+            }
+        }
+
+    }
+
+    &:hover {
+        .hidden-btns {
+            opacity: 1;
+            right: 10px;
+        }
+
     }
 }

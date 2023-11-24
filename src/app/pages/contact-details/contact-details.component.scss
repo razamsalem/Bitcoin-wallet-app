@@ -71,6 +71,22 @@
                 }
             }
         }
+
+        .edit-btn {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            font-size: 25px;
+
+            background: none;
+            border: none;
+            color: #00719c;
+            transition: color .2s;
+
+            &:hover {
+                color: #00415a;
+            } 
+        }
     }
 
 }
