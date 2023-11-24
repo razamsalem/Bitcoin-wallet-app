@@ -165,6 +165,47 @@ export class ContactService {
                 "phone": "+1 (948) 464-2888"
             },
             {
+                "_id": "5a56640269f443a5d64b32cb",
+                "name": "John Doe",
+                "email": "johndoe@example.com",
+                "address": "123 Main Street, CA",
+                "age": 30,
+                "phone": "+1 (123) 456-7890"
+            },
+            {
+                "_id": "5a56640269f443a5d64b32cc",
+                "name": "Alice Smith",
+                "email": "alicesmith@example.com",
+                "address": "456 Oak Avenue, NY",
+                "age": 25,
+                "phone": "+1 (987) 654-3210"
+            },
+            {
+                "_id": "5a56640269f443a5d64b32cd",
+                "name": "Bob Johnson",
+                "email": "bobjohnson@example.com",
+                "address": "789 Pine Street, TX",
+                "age": 35,
+                "phone": "+1 (555) 123-4567"
+            },
+            {
+                "_id": "5a56640269f443a5d64b32ce",
+                "name": "Emily Williams",
+                "email": "emilywilliams@example.com",
+                "address": "987 Cedar Avenue, FL",
+                "age": 28,
+                "phone": "+1 (111) 222-3333"
+            },
+            {
+                "_id": "5a56640269f443a5d64b32cf",
+                "name": "Michael Brown",
+                "email": "michaelbrown@example.com",
+                "address": "654 Birch Street, WA",
+                "age": 40,
+                "phone": "+1 (777) 888-9999"
+            },
+
+            {
                 "_id": "5a56640252d6acddd183d319",
                 "name": "Parsons Norris",
                 "email": "parsonsnorris@renovize.com",
@@ -250,54 +291,6 @@ export class ContactService {
                 "address": "4349  Saint Road, FL",
                 "age": 34,
                 "phone": "+1 (963) 471-3181"
-            },
-            {
-                "_id": "5a56640298ab77236845b82b",
-                "name": "Glenna Santana",
-                "email": "glennasantana@renovize.com",
-                "address": "4349  Saint Road, FL",
-                "age": 39,
-                "phone": "+1 (860) 467-2376"
-            },
-            {
-                "_id": "5a56640208fba3e8ecb97305",
-                "name": "Malone Clark",
-                "email": "maloneclark@renovize.com",
-                "address": "4349  Saint Road, FL",
-                "age": 44,
-                "phone": "+1 (818) 565-2557"
-            },
-            {
-                "_id": "5a566402abb3146207bc4ec5",
-                "name": "Floyd Rutledge",
-                "email": "floydrutledge@renovize.com",
-                "address": "4349  Saint Road, IL",
-                "age": 24,
-                "phone": "+1 (807) 597-3629"
-            },
-            {
-                "_id": "5a56640298500fead8cb1ee5",
-                "name": "Grace James",
-                "email": "gracejames@renovize.com",
-                "address": "4349  Saint Road, CA",
-                "age": 21,
-                "phone": "+1 (959) 525-2529"
-            },
-            {
-                "_id": "5a56640243427b8f8445231e",
-                "name": "Tanner Gates",
-                "email": "tannergates@renovize.com",
-                "address": "4349  Saint Road, CA",
-                "age": 31,
-                "phone": "+1 (978) 591-2291"
-            },
-            {
-                "_id": "5a5664025c3abdad6f5e098c",
-                "name": "Lilly Conner",
-                "email": "lillyconner@renovize.com",
-                "address": "4349  Saint Road, CA",
-                "age": 42,
-                "phone": "+1 (842) 587-3812"
             }
         ]
         return contacts
