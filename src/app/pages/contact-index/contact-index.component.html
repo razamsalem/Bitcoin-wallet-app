@@ -1,7 +1,6 @@
 <section class="contacts-container">
     <app-profile-header [title]="title"></app-profile-header>
-    <button routerLink="/stats">Stats</button>
-    <button routerLink="/contact/edit">Add Contact</button>
+    <button routerLink="/contact/edit" class="add-btn" title="Add Contact"><i class="fa-solid fa-plus fa-2xl"></i></button>
     <app-contact-filter />
     <app-contact-list (remove)="onRemoveContact($event)" [contacts]="contacts"></app-contact-list>
 </section>

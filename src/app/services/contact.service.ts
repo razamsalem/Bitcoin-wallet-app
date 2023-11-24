@@ -139,9 +139,10 @@ export class ContactService {
     private _filter(contacts: Contact[], term: string) {
         term = term.toLocaleLowerCase()
         return contacts.filter(contact => {
-            return contact.name.toLocaleLowerCase().includes(term) ||
-                contact.phone.toLocaleLowerCase().includes(term) ||
-                contact.email.toLocaleLowerCase().includes(term)
+            return contact.name.toLocaleLowerCase().includes(term)
+            //  ||
+            // contact.phone.toLocaleLowerCase().includes(term) ||
+            // contact.email.toLocaleLowerCase().includes(term)
         })
     }
 

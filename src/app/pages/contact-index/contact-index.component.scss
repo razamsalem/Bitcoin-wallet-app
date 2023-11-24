@@ -6,4 +6,21 @@
     .contact {
         padding: 45px;
     }
+
+    .add-btn {
+        position: absolute;
+        bottom: 35px;
+        right: 35px;
+
+        width: 4em;
+        height: 4em;
+        border: 1px solid #001f2b;
+        border-radius: 50%;
+        transition: .4s;
+
+        &:hover {
+            width: 5em;
+            height: 5em;
+        }
+    }
 }
