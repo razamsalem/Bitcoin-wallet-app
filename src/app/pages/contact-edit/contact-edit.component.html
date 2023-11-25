@@ -3,23 +3,48 @@
     <div class="relative-container">
         <div class="edit-area">
             <h2>{{header}} Contact</h2>
-            <form (ngSubmit)="onSaveContact()">
+            <form #form="ngForm" (ngSubmit)="onSaveContact()">
                 <label for="name">Full name</label>
-                <input [(ngModel)]="contact.name" type="text" name="name" id="name">
+                <input required minlength="3" [(ngModel)]="contact.name" type="text" name="name" id="name"
+                    #fullname="ngModel">
+
+                <p *ngIf="fullname.invalid && fullname.touched" class="errors">
+                    <span *ngIf="fullname.errors?.['required']"> Full name is required! </span>
+                    <span *ngIf="fullname.errors?.['minlength']">Full name must include at least 3 letters!</span>
+                </p>
 
                 <label for="phoneNumber">Phone number</label>
-                <input [(ngModel)]="contact.phone" type="text" name="phoneNumber" id="phoneNumber">
+                <input required [(ngModel)]="contact.phone" type="text" name="phoneNumber" id="phoneNumber"
+                    #phoneNumber="ngModel">
+
+                <p *ngIf="phoneNumber.invalid && phoneNumber.touched" class="errors">
+                    <span *ngIf="phoneNumber.errors?.['required']">Phone number is required! </span>
+                </p>
 
                 <label for="email">Email</label>
-                <input [(ngModel)]="contact.email" type="email" name="email" id="email">
+                <input required [(ngModel)]="contact.email" type="email" name="email" id="email"
+                    #contactEmail="ngModel">
+
+                <p *ngIf="contactEmail.invalid && contactEmail.touched" class="errors">
+                    <span *ngIf="contactEmail.errors?.['required']">Email is required! </span>
+                </p>
 
                 <label for="age">Age</label>
-                <input [(ngModel)]="contact.age" type="number" name="age" id="age">
+                <input required [(ngModel)]="contact.age" type="number" name="age" id="age" #contactAge="ngModel">
+
+                <p *ngIf="contactAge.invalid && contactAge.touched" class="errors">
+                    <span *ngIf="contactAge.errors?.['required']">Age is required! </span>
+                </p>
 
                 <label for="address">Address</label>
-                <input [(ngModel)]="contact.address" type="text" name="address" id="address">
+                <input required [(ngModel)]="contact.address" type="text" name="address" id="address"
+                    #contactAddress="ngModel">
 
-                <button>Save</button>
+                <p *ngIf="contactAddress.invalid && contactAddress.touched" class="errors">
+                    <span *ngIf="contactAddress.errors?.['required']">Address is required! </span>
+                </p>
+
+                <button [disabled]="form.invalid">Save</button>
             </form>
         </div>
         <button (click)="onBack()" class="back-btn" title="Go back">
