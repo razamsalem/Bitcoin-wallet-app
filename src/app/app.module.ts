@@ -21,6 +21,7 @@ import { RadarComponent } from './cmps/radar/radar.component';
 import { HeaderComponent } from './cmps/header/header.component';
 import { ProfileHeaderComponent } from './cmps/profile-header/profile-header.component';
 import { LoginComponent } from './pages/login/login.component';
+import { BarComponent2 } from './cmps/bar2/bar2.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { LoginComponent } from './pages/login/login.component';
     StatsComponent,
     LineComponent,
     BarComponent,
+    BarComponent2,
     RadarComponent,
     HeaderComponent,
     ProfileHeaderComponent,

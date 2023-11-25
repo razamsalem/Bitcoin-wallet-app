@@ -1,4 +1,3 @@
-/* Add more styling to make the calculator visually appealing */
 .stats-container {
   background-color: #00415a;
   min-height: 100vh;
@@ -18,18 +17,13 @@
       border: 3px solid lightblue;
       border-radius: 8px;
       padding: 1.5em;
-      /* Increase padding for better spacing */
       box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
       display: flex;
       flex-direction: column;
-      /* Align children vertically */
-      // justify-content: space-between; /* Distribute space evenly between children */
 
       h3 {
         color: #00719c;
-        /* Dark blue text color */
         margin-bottom: 0.5em;
-        /* Adjust spacing below h3 */
       }
       .convert-inputs { 
         border: 2px solid #ccc;
@@ -57,10 +51,8 @@
           box-sizing: border-box;
           display: inline-block;
           -moz-appearance: textfield;
-          /* Firefox */
           appearance: textfield;
 
-          /* Remove the spin buttons for most browsers */
           +i {
             color: #d8d7d7;
             position: absolute;

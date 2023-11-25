@@ -4,18 +4,26 @@ import { ChartConfiguration } from 'chart.js';
 @Component({
   selector: 'app-radar',
   templateUrl: './radar.component.html',
-  styleUrl: './radar.component.scss'
+  styleUrls: ['./radar.component.scss']
 })
 export class RadarComponent {
 
   public radarChartOptions: ChartConfiguration<'radar'>['options'] = {
     responsive: true,
+    scales: {
+      r: {
+        ticks: {
+          display: false
+        }
+      }
+    }
   };
-  public radarChartLabels: string[] = ['Eating', 'Drinking', 'Sleeping', 'Designing', 'Coding', 'Cycling', 'Running'];
+
+  public radarChartLabels: string[] = ['Market Sentiment', 'Volatility', 'Transaction Volume', 'Market Cap', 'Mining Power', 'Adoption', 'Security'];
 
   public radarChartDatasets: ChartConfiguration<'radar'>['data']['datasets'] = [
-    { data: [65, 59, 90, 81, 56, 55, 40], label: 'Series A' },
-    { data: [28, 48, 40, 19, 96, 27, 100], label: 'Series B' }
+    { data: [70, 50, 80, 90, 60, 75, 85], label: 'Last Month' },
+    { data: [40, 70, 60, 80, 50, 90, 75], label: 'This Month' },
   ];
 
   constructor() {
