@@ -1,3 +1,36 @@
-<app-line></app-line>
-<app-bar></app-bar>
-<app-radar></app-radar>
+<section class="stats-container">
+    <div class="above-charts flex">
+        <div class="bar-chart">
+            <app-bar></app-bar>
+            <app-bar></app-bar>
+        </div>
+        <div class="radar-chart">
+            <app-radar></app-radar>
+        </div>
+        <div class="calculator">
+            <h3><i class="fa-solid fa-calculator"></i> Bitcoin Calculator</h3>
+            <span>Current BTC value = 37,757.60 <small>USD</small> </span>
+            <span class="green"> +18.80 (0.05%) <i class="fa-solid fa-arrow-trend-up"></i> today</span>
+            <div class="convert-inputs">
+                <div class="convert flex">
+                    <label for="usdInput">Enter USD</label>
+                    <input type="number" id="usdInput" [(ngModel)]="usdAmount" (input)="convertToBitcoin()">
+                    <i class="fa-solid fa-dollar-sign"></i>
+                </div>
+                <div class="convert flex">
+                    <label for="btcInput">BTC Value</label>
+                    <input type="number" id="btcInput" [value]="bitcoinValue" readonly>
+                    <i class="fa-solid fa-bitcoin-sign"></i>
+                </div>
+            </div>
+            <p *ngIf="error">Error occurred while fetching data.</p>
+            <div class="imgs flex">
+                <img src="https://res.cloudinary.com/de2rdmsca/image/upload/v1700906599/png-transparent-united-states-dollar-dollar-sign-computer-icons-money-dollar-coin-coin-text-trademark-investment-removebg-preview_xus0d4.png" alt="Dollar coins image">
+                <img src="https://cdn3.iconfinder.com/data/icons/basicolor-money-finance/24/226_bitcoin_btc_currency-512.png" alt="Bitcoin image">
+            </div>
+        </div>
+    </div>
+    <div class="below-charts">
+        <app-line></app-line>
+    </div>
+</section>

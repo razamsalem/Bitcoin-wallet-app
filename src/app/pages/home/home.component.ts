@@ -31,7 +31,7 @@ export class HomeComponent implements OnInit {
     this.userPhone = user.phone;
     this.userEmail = user.email;
 
-    this.formatUserCoins();
+    this.formatUserCoins()
 
     const coinsToConvert = this.userCoins;
     this.bitcoinService.getRate(coinsToConvert).subscribe(
@@ -39,12 +39,12 @@ export class HomeComponent implements OnInit {
         this.bitcoinRate = bitcoinRate;
       },
       error => {
-        console.error('Error fetching Bitcoin rate:', error);
+        console.error('Error fetching Bitcoin rate:', error)
       }
     )
   }
 
   formatUserCoins() {
-    this.formattedUserCoins = this.userCoins.toFixed(2);
+    this.formattedUserCoins = this.userCoins.toFixed(2)
   }
 }

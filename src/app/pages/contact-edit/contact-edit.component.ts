@@ -31,12 +31,12 @@ export class ContactEditComponent {
         this.isEdit = true
       })
 
-      if (!this.isEdit) {
-        this.contact.age = undefined; 
-      }
-      
-      this.title = this.isEdit ? 'Edit Contact' : 'Add Contact'
-      this.header = this.isEdit ? 'Edit' : 'Add'
+    if (!this.isEdit) {
+      this.contact.age = undefined;
+    }
+
+    this.title = this.isEdit ? 'Edit Contact' : 'Add Contact'
+    this.header = this.isEdit ? 'Edit' : 'Add'
   }
 
   onSaveContact() {

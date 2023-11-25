@@ -1,0 +1,113 @@
+/* Add more styling to make the calculator visually appealing */
+.stats-container {
+  background-color: #00415a;
+  min-height: 100vh;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+
+  .above-charts {
+    display: flex;
+    justify-content: space-between;
+
+    .bar-chart,
+    .radar-chart,
+    .calculator {
+      flex: 1;
+      background-color: #fff;
+      border: 3px solid lightblue;
+      border-radius: 8px;
+      padding: 1.5em;
+      /* Increase padding for better spacing */
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+      display: flex;
+      flex-direction: column;
+      /* Align children vertically */
+      // justify-content: space-between; /* Distribute space evenly between children */
+
+      h3 {
+        color: #00719c;
+        /* Dark blue text color */
+        margin-bottom: 0.5em;
+        /* Adjust spacing below h3 */
+      }
+      .convert-inputs { 
+        border: 2px solid #ccc;
+        border-radius: 12px;
+        padding: 1rem;
+        margin-block-start: 1rem;
+      }
+      .convert {
+        position: relative;
+        align-items: baseline;
+        margin-block: 1.5em;
+        
+
+        label {
+          display: block;
+          text-align: left;
+          width: 40%;
+        }
+
+        input {
+          padding: 0.5em;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          width: 60%;
+          box-sizing: border-box;
+          display: inline-block;
+          -moz-appearance: textfield;
+          /* Firefox */
+          appearance: textfield;
+
+          /* Remove the spin buttons for most browsers */
+          +i {
+            color: #d8d7d7;
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            padding: 0.5em;
+          }
+
+          &::-webkit-inner-spin-button,
+          &::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+          }
+        }
+      }
+
+      .imgs {
+        justify-content: space-evenly;
+        margin-block-start: auto;
+        img {
+          width: 100px;
+        }
+      }
+
+      .green {
+        margin-block-end: 1rem;
+      }
+
+      p {
+        margin-top: 1em;
+      }
+
+      &:not(:last-child) {
+        margin-inline-end: 1em;
+      }
+    }
+  }
+
+  .below-charts {
+    margin-top: 1em;
+    flex: 1;
+    width: 100%;
+    background-color: #fff;
+    border: 3px solid lightblue;
+    border-radius: 8px;
+    padding: 1em;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+  }
+}

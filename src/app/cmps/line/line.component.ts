@@ -38,7 +38,7 @@ export class LineComponent {
     ]
   };
   public lineChartOptions: ChartOptions<'line'> = {
-    responsive: false
+    responsive: true
   }
   public lineChartLegend = true;
 
@@ -47,4 +47,5 @@ export class LineComponent {
 
   ngOnInit() {
   }
+
 }
