@@ -15,6 +15,8 @@ export class ContactEditComponent {
   private route = inject(ActivatedRoute)
 
   title: string = ''
+  header: string = ''
+  isEdit: boolean = false
   destroySubject$ = new Subject<void>()
   contact = this.contactService.getEmptyContact()
 
@@ -26,8 +28,10 @@ export class ContactEditComponent {
       )
       .subscribe(contact => {
         this.contact = contact
+        this.isEdit = true
       })
-      this.title = 'Add Contact'
+    this.title = this.isEdit ? 'Edit Contact' : 'Add Contact'
+    this.header = this.isEdit ? 'Edit' : 'Add'
   }
 
   onSaveContact() {
