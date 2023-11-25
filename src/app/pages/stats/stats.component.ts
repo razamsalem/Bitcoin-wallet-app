@@ -7,6 +7,7 @@ import { BitcoinService } from '../../services/bitcoin.service';
   styleUrls: ['./stats.component.scss']
 })
 export class StatsComponent {
+  title: string = 'Stats'
   usdAmount!: number;
   bitcoinValue: number | null = null;
   error: boolean = false;
