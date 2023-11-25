@@ -11,7 +11,7 @@ export class AppComponent implements OnInit {
   // constructor(private contactService: ContactService) { }
   private contactService = inject(ContactService)
   subscription!: Subscription
-  isLogin = true
+  isLogin = false
 
   ngOnInit() {
     this.subscription = this.contactService.loadContacts()
