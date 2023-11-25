@@ -30,7 +30,7 @@
                 </p>
 
                 <label for="age">Age</label>
-                <input required [(ngModel)]="contact.age" type="number" name="age" id="age" #contactAge="ngModel">
+                <input required [(ngModel)]="contact.age" min="1" max="99" type="number" name="age" id="age" #contactAge="ngModel">
 
                 <p *ngIf="contactAge.invalid && contactAge.touched" class="errors">
                     <span *ngIf="contactAge.errors?.['required']">Age is required! </span>
