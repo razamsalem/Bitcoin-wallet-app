@@ -14,6 +14,12 @@
                 <h1 class="user-detail flex"><i class="fa-solid fa-at icon"></i> {{user.email}}</h1>
                 <h1 class="user-detail flex"><i class="fa-solid fa-wallet icon"></i> ${{ formattedUserCoins }}</h1>
                 <h1 class="user-detail flex"><i class="fa-brands fa-bitcoin icon"></i> {{ bitcoinRate }}</h1>
+                <h1></h1>
+                <h1 class="user-detail flex" *ngFor="let move of lastMoves">
+                    <i class="fa-solid fa-coins icon"></i> Transfer to {{ move.to }}: ${{ move.amount }} at {{ move.at |
+                    date:
+                    'medium' }}
+                </h1>
             </div>
         </div>
     </div>

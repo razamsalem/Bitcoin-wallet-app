@@ -10,15 +10,11 @@ const ENTITY = 'user'
 })
 export class UserService {
 
-  private _user$ = new BehaviorSubject<User>(this._createUser())
+  private _user$ = new BehaviorSubject<User>(this._loadUserFromLocalStorage())
   public user$ = this._user$.asObservable()
 
   constructor() {
-    const user = JSON.parse(localStorage.getItem(ENTITY) || 'null');
-    if (!user) {
-      localStorage.setItem(ENTITY, JSON.stringify(this._createUser()));
-    }
-    this._user$.next(this._createUser())
+    this._user$.next(this._loadUserFromLocalStorage())
   }
 
   getUser() {
@@ -40,16 +36,24 @@ export class UserService {
   }
 
   moveFunds(move: Move) {
-    const user = this._user$.getValue()
+    const user = this._user$.getValue();
     if (user.coins >= move.amount) {
-      user.coins -= move.amount
-      user.moves.push(move)
-      console.log('move', move)
-      console.log('user', user)
-      this._user$.next(user)
+      user.coins -= move.amount;
+      user.moves.push(move);
+      this._user$.next(user);
+      this._saveUserToLocalStorage(user);
     } else {
-      console.log('Insufficient funds')
+      console.log('Insufficient funds');
     }
+  }
+
+  private _saveUserToLocalStorage(user: User) {
+    localStorage.setItem(ENTITY, JSON.stringify(user));
+  }
+
+  private _loadUserFromLocalStorage(): User {
+    const user = JSON.parse(localStorage.getItem(ENTITY) || 'null')
+    return user || this._createUser()
   }
 
   private _handleError(err: HttpErrorResponse) {
