@@ -47,7 +47,7 @@ export class ContactEditComponent {
         next: this.onBack,
         error: err => console.log('err', err)
       })
-      showSuccessMsg('Contact edited successfully')
+    showSuccessMsg(`Contact ${this.isEdit ? 'Edit' : 'Add'} successfully`)
   }
 
   onBack = () => {
