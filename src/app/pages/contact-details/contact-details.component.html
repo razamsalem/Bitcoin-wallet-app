@@ -13,6 +13,20 @@
                     <h1 class="user-detail flex"><i class="fa-solid fa-house-chimney icon"></i> {{contact.address}}</h1>
                     <h1 class="user-detail flex"><i class="fa-solid fa-phone icon"></i> {{contact.phone}}</h1>
                     <h1 class="user-detail flex"><i class="fa-solid fa-at icon"></i> {{contact.email}}</h1>
+
+                    <div class="last-transfers">
+                        <h3>Recent transactions with {{ contact.name }}</h3>
+                        <p class="user-detail flex" *ngFor="let move of contactMoves.slice().reverse()">
+                            <i class="fa-solid fa-coins icon"></i>
+                            <span> Transfer <span class="gold"> ${{move.amount }} </span>
+                                to <span class="colored">{{ move.to }}</span>
+                                <br>
+                                at <span class="colored"> {{ move.at|date:'short' }} </span>
+                            </span>
+                        </p>
+                        <p class="no-transfers-message" *ngIf="contactMoves.length === 0">No transfers with {{
+                            contact.name }}.</p>
+                    </div>
                 </div>
                 <div class="actions">
                     <button [routerLink]="['/contact/edit', contact._id]" class="edit-btn" title="Edit this contact">

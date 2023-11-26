@@ -21,6 +21,7 @@ export class ContactDetailsComponent {
   contact: Contact | null = null
   contact$!: Observable<Contact>
   transferAmount: number | null = null
+  contactMoves: Move[] = []
 
   async ngOnInit(): Promise<void> {
     this.contact$ = this.route.data.pipe(map(data => data['contact']))
@@ -34,6 +35,8 @@ export class ContactDetailsComponent {
       const contact = await lastValueFrom(this.contactService.getContactById(id))
       this.contact = contact
       this.title = this.contact.name
+      this.contactMoves = await lastValueFrom(this.userService.getMovesForContact(id))
+      console.log('contactMoves', this.contactMoves)
     })
   }
 
@@ -48,6 +51,7 @@ export class ContactDetailsComponent {
 
       this.userService.moveFunds(move)
       this.transferAmount = null
+      this.contactMoves = await lastValueFrom(this.userService.getMovesForContact(this.contact!._id))
     }
   }
 

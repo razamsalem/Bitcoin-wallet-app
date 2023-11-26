@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Move } from '../models/move';
 import { User } from '../models/user';
-import { BehaviorSubject, from, throwError } from 'rxjs';
+import { BehaviorSubject, Observable, from, throwError } from 'rxjs';
 import { storageService } from './async-storage.service';
 import { HttpErrorResponse } from '@angular/common/http';
 const ENTITY = 'user'
@@ -50,6 +50,13 @@ export class UserService {
     } else {
       console.log('Insufficient funds');
     }
+  }
+
+  getMovesForContact(contactId: string): Observable<Move[]> {
+    const user = this._user$.getValue()
+    const moves = user.moves.filter(move => move.toId === contactId)
+    const RecentMoves = moves.slice(-3)
+    return from([RecentMoves])
   }
 
   private _saveUserToLocalStorage(user: User) {
