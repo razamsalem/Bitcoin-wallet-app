@@ -3,6 +3,8 @@ import { Contact } from '../../models/contact.model';
 import { ContactService } from '../../services/contact.service';
 import { Observable, lastValueFrom, map, switchMap } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
+import { UserService } from '../../services/user.service';
+import { Move } from '../../models/move';
 
 @Component({
   selector: 'app-contact-details',
@@ -11,6 +13,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class ContactDetailsComponent {
   private contactService = inject(ContactService)
+  private userService = inject(UserService)
   private router = inject(Router)
   private route = inject(ActivatedRoute)
 
@@ -30,6 +33,17 @@ export class ContactDetailsComponent {
       this.contact = contact
       this.title = this.contact.name
     })
+  }
+
+  async moveCoins() {
+    const move: Move = {
+      toId: this.contact!._id,
+      to: this.contact!.name,
+      at: Date.now(),
+      amount: 2
+    }
+
+    this.userService.moveFunds(move)
   }
 
   onBack() {

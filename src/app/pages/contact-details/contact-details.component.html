@@ -14,9 +14,12 @@
                     <h1 class="user-detail flex"><i class="fa-solid fa-phone icon"></i> {{contact.phone}}</h1>
                     <h1 class="user-detail flex"><i class="fa-solid fa-at icon"></i> {{contact.email}}</h1>
                 </div>
-                <button [routerLink]="['/contact/edit', contact._id]" class="edit-btn" title="Edit this contact"><i class="fa-solid fa-user-pen"></i></button>
+                <button [routerLink]="['/contact/edit', contact._id]" class="edit-btn" title="Edit this contact"><i
+                        class="fa-solid fa-user-pen"></i></button>
             </div>
+            <button (click)="moveCoins()" class="transfer-btn"><i class="fa-solid fa-coins"></i> Transfer Funds</button>
         </div>
-        <button (click)="onBack()" class="back-btn" title="Go back"><i class="fa-solid fa-share fa-flip-horizontal"></i></button>
+        <button (click)="onBack()" class="back-btn" title="Go back"><i
+                class="fa-solid fa-share fa-flip-horizontal"></i></button>
     </div>
 </div>
