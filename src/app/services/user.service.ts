@@ -43,16 +43,17 @@ export class UserService {
   }
 
   moveFunds(move: Move) {
-    const user = this._user$.getValue();
+    const user = this._user$.getValue()
     if (user.coins >= move.amount) {
-      user.coins -= move.amount;
-      user.moves.push(move);
-      this._user$.next(user);
-      this._saveUserToLocalStorage(user);
-      showSuccessMsg('Funds moved successfully!');
+      user.coins -= move.amount
+      user.moves.push(move)
+      this._user$.next(user)
+      this._saveUserToLocalStorage(user)
+      showSuccessMsg('Funds moved successfully!')
+      this.playPositiveSound()
     } else {
-      showErrorMsg('Insufficient funds');
-      console.error('Insufficient funds');
+      showErrorMsg('Insufficient funds')
+      console.error('Insufficient funds')
     }
   }
 
@@ -61,6 +62,11 @@ export class UserService {
     const moves = user.moves.filter(move => move.toId === contactId)
     const RecentMoves = moves.slice(-3)
     return from([RecentMoves])
+  }
+
+   playPositiveSound() {
+    const audio = new Audio('../assets/sound/check.mp3')
+    audio.play()
   }
 
   private _saveUserToLocalStorage(user: User) {

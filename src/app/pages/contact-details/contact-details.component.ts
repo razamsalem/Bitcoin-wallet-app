@@ -25,7 +25,6 @@ export class ContactDetailsComponent {
 
   async ngOnInit(): Promise<void> {
     this.contact$ = this.route.data.pipe(map(data => data['contact']))
-
     // this.contact$ = this.route.params.pipe(
     //   switchMap(params => this.contactService.getContactById(params['id']))
     // )
@@ -47,8 +46,7 @@ export class ContactDetailsComponent {
         to: this.contact!.name,
         at: Date.now(),
         amount: this.transferAmount
-      }
-
+      }    
       this.userService.moveFunds(move)
       this.transferAmount = null
       this.contactMoves = await lastValueFrom(this.userService.getMovesForContact(this.contact!._id))
