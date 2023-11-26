@@ -43,10 +43,18 @@
             margin-inline-start: 8rem;
             flex-direction: column;
 
+            h1 {
+                
+                // &:not(:first-of-type, :last-type:first-of-type) {
+                    margin-block: .2em;
+                // }
+
+            }
+            
             .user-detail {
                 align-items: center;
                 font-size: 1rem;
-
+                
                 .icon {
                     color: #00415a;
                     font-size: .9rem;

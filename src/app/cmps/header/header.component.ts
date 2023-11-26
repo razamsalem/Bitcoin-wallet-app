@@ -9,7 +9,7 @@ export class HeaderComponent {
   @Output() logout = new EventEmitter<boolean>()
 
   onLogout() {
-    this.logout.emit();
+    this.logout.emit()
   }
 
 }

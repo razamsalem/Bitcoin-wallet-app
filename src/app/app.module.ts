@@ -23,6 +23,7 @@ import { ProfileHeaderComponent } from './cmps/profile-header/profile-header.com
 import { LoginComponent } from './pages/login/login.component';
 import { BarComponent2 } from './cmps/bar2/bar2.component';
 import { UserMsgComponent } from './cmps/user-msg/user-msg.component';
+import { TransfersComponent } from './pages/transfers/transfers.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { UserMsgComponent } from './cmps/user-msg/user-msg.component';
     HeaderComponent,
     ProfileHeaderComponent,
     LoginComponent,
-    UserMsgComponent
+    UserMsgComponent,
+    TransfersComponent
   ],
   imports: [
     BrowserModule,

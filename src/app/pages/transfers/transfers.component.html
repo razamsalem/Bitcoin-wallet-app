@@ -1,0 +1,19 @@
+<div class="transfers-container">
+    <app-profile-header [title]="title"></app-profile-header>
+    <div *ngIf="allTransfers.length > 0" class="tranfer-list contacts-layout">
+        <section *ngFor="let transfer of allTransfers.slice().reverse()" class="transfer-preview">
+            <div class="info flex">
+                <img class="item" src="https://www.pngall.com/wp-content/uploads/5/User-Profile-PNG-Image.png" alt="User picture">
+                <i class=" item fa-solid fa-arrow-right-long arrow transfer-icon fa-xl"></i>
+                <img class="item" src="https://robohash.org/{{transfer.toId}}?set=set5" alt="Contact profile picture">
+                <!-- <div class="data">
+                    <p>{{transfer.to}}</p>
+                </div> -->
+                <i class="fa-solid fa-hand-holding-hand fa-xl hands item"></i>
+                <h4 class="item"><i class="fa-solid fa-dollar-sign transfer-icon lgreen"></i><span class="dgreen">{{transfer.amount}}.00</span></h4>
+                <h4 class="calendar item"> <i class="fa-solid fa-calendar-days "></i>{{ transfer.at|date:'short' }} </h4>
+                                
+            </div>
+        </section>
+    </div>
+</div>

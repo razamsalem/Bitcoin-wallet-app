@@ -6,6 +6,7 @@ import { ContactDetailsComponent } from './pages/contact-details/contact-details
 import { ContactEditComponent } from './pages/contact-edit/contact-edit.component';
 import { contactResolver } from './resolvers/contact.resolver';
 import { StatsComponent } from './pages/stats/stats.component';
+import { TransfersComponent } from './pages/transfers/transfers.component';
 
 const routes: Routes = [
   { path: 'contact/edit/:id', component: ContactEditComponent, resolve: { contact: contactResolver } },
@@ -17,6 +18,7 @@ const routes: Routes = [
   },
   { path: 'contact', component: ContactIndexComponent },
   { path: 'stats', component: StatsComponent },
+  { path: 'transfers', component: TransfersComponent },
   { path: '', component: HomeComponent }
 ]
 

@@ -64,7 +64,13 @@ export class UserService {
     return from([RecentMoves])
   }
 
-   playPositiveSound() {
+  getAllTransfers(): Observable<Move[]> {
+    const user = this._user$.getValue()
+    const allTransfers = user.moves
+    return from([allTransfers])
+  }
+
+  playPositiveSound() {
     const audio = new Audio('../assets/sound/check.mp3')
     audio.play()
   }

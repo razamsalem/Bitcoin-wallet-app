@@ -25,9 +25,6 @@ export class ContactDetailsComponent {
 
   async ngOnInit(): Promise<void> {
     this.contact$ = this.route.data.pipe(map(data => data['contact']))
-    // this.contact$ = this.route.params.pipe(
-    //   switchMap(params => this.contactService.getContactById(params['id']))
-    // )
 
     this.route.params.subscribe(async params => {
       const id = params['id']
