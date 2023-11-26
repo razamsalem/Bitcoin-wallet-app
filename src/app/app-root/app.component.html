@@ -5,7 +5,7 @@
 
 <section *ngIf="isLogin" class="app main-layout">
 
-  <app-header class="nav"></app-header>
+  <app-header (logout)="onLogout()" class="nav"></app-header>
 
   <main>
     <router-outlet></router-outlet>

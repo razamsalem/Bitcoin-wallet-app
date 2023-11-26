@@ -1,4 +1,5 @@
 .app-header {
+    position: relative;
     flex-direction: column;
     padding: 1em;
     background-color: #001f2b;
@@ -33,6 +34,27 @@
 
             &:hover {
                 color: #fff;
+            }
+        }
+
+        .logout-btn {
+            position: fixed;
+            bottom: 2em;
+            left: 1em;
+            width: 2em;
+            height: 2em;
+            background: none;
+            border: 1px solid #fff;
+            border-radius: 50%;
+            color: #fff;
+            transition: 0.15s;
+
+            &:hover {
+                width: 3em;
+                height: 3em;
+                background-color: orangered;
+                border: none;
+                color: white;
             }
         }
     }

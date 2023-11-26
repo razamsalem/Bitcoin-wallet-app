@@ -26,7 +26,12 @@ export class AppComponent implements OnInit {
   }
 
   onLogin() {
-    this.isLogin = true;
-    localStorage.setItem('isLogin', 'true');
+    this.isLogin = true
+    localStorage.setItem('isLogin', 'true')
+  }
+
+  onLogout() {
+    this.isLogin = false
+    localStorage.removeItem('isLogin')
   }
 }
