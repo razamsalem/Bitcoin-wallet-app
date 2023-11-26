@@ -1,6 +1,7 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { ContactService } from '../../services/contact.service';
 import { Contact } from '../../models/contact.model';
+import { showSuccessMsg, showErrorMsg } from '../../services/event-bus.service';
 
 @Component({
   selector: 'app-contact-index',
@@ -27,10 +28,11 @@ export class ContactIndexComponent implements OnInit {
   }
 
   onRemoveContact(contactId: string) {
+    showSuccessMsg('Contact removed')
     this.contactService.deleteContact(contactId)
-        .subscribe({
-            error: err => console.log('err:', err)
-        })
-}
+      .subscribe({
+        error: err => console.log('err:', err)
+      })
+  }
 
 }

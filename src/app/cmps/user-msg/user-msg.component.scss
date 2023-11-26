@@ -1,0 +1,26 @@
+/* user-msg.component.scss */
+
+:host {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    width: 300px;
+}
+
+.success,
+.error {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 12px;
+}
+
+.success {
+    background-color: #4caf50;
+    color: white;
+}
+
+.error {
+    background-color: #f44336;
+    color: white;
+}

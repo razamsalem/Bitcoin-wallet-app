@@ -4,7 +4,7 @@
 
 
 <section *ngIf="isLogin" class="app main-layout">
-
+  <app-user-msg></app-user-msg>
   <app-header (logout)="onLogout()" class="nav"></app-header>
 
   <main>

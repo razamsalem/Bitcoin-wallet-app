@@ -3,6 +3,7 @@ import { ContactService } from '../../services/contact.service';
 import { Contact } from '../../models/contact.model';
 import { ActivatedRoute, Router } from '@angular/router';
 import { map, switchMap, filter, takeUntil, Subject } from 'rxjs';
+import { showSuccessMsg, showErrorMsg } from '../../services/event-bus.service';
 
 @Component({
   selector: 'app-contact-edit',
@@ -46,6 +47,7 @@ export class ContactEditComponent {
         next: this.onBack,
         error: err => console.log('err', err)
       })
+      showSuccessMsg('Contact edited successfully')
   }
 
   onBack = () => {

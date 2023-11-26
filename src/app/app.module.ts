@@ -22,6 +22,7 @@ import { HeaderComponent } from './cmps/header/header.component';
 import { ProfileHeaderComponent } from './cmps/profile-header/profile-header.component';
 import { LoginComponent } from './pages/login/login.component';
 import { BarComponent2 } from './cmps/bar2/bar2.component';
+import { UserMsgComponent } from './cmps/user-msg/user-msg.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { BarComponent2 } from './cmps/bar2/bar2.component';
     RadarComponent,
     HeaderComponent,
     ProfileHeaderComponent,
-    LoginComponent
+    LoginComponent,
+    UserMsgComponent
   ],
   imports: [
     BrowserModule,

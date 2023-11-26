@@ -4,6 +4,8 @@ import { User } from '../models/user';
 import { BehaviorSubject, Observable, from, throwError } from 'rxjs';
 import { storageService } from './async-storage.service';
 import { HttpErrorResponse } from '@angular/common/http';
+import { showSuccessMsg, showErrorMsg } from './event-bus.service';
+
 const ENTITY = 'user'
 @Injectable({
   providedIn: 'root'
@@ -47,8 +49,10 @@ export class UserService {
       user.moves.push(move);
       this._user$.next(user);
       this._saveUserToLocalStorage(user);
+      showSuccessMsg('Funds moved successfully!');
     } else {
-      console.log('Insufficient funds');
+      showErrorMsg('Insufficient funds');
+      console.error('Insufficient funds');
     }
   }
 
