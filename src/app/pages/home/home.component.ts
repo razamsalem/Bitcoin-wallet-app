@@ -1,50 +1,41 @@
 import { Component, Input, Output, OnInit, EventEmitter } from '@angular/core';
 import { UserService } from '../../services/user.service';
 import { BitcoinService } from '../../services/bitcoin.service';
-
+import { User } from '../../models/user';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  @Output() exitHomePage = new EventEmitter<void>()
   title = 'My Card'
-  userName: string = '';
-  userCoins: number = 0;
-  userAddress: string = '';
-  userAge: number = 0;
-  userPhone: string = '';
-  userEmail: string = '';
-
   bitcoinRate: number = 0;
   formattedUserCoins: string = '';
-  @Output() exitHomePage = new EventEmitter<void>()
+  user!: User;
 
   constructor(private userService: UserService, private bitcoinService: BitcoinService) { }
 
   ngOnInit(): void {
-    const user = this.userService.getUser();
-    this.userName = user.name;
-    this.userCoins = user.coins;
-    this.userAddress = user.address;
-    this.userAge = user.age;
-    this.userPhone = user.phone;
-    this.userEmail = user.email;
+    this.userService.user$.subscribe(user => {
+      this.user = user
+      this.formatUserCoins()
 
-    this.formatUserCoins()
-
-    const coinsToConvert = this.userCoins;
-    this.bitcoinService.getRate(coinsToConvert).subscribe(
-      bitcoinRate => {
-        this.bitcoinRate = bitcoinRate;
-      },
-      error => {
-        console.error('Error fetching Bitcoin rate:', error)
-      }
-    )
+      const coinsToConvert = this.user.coins;
+      this.bitcoinService.getRate(coinsToConvert).subscribe(
+        bitcoinRate => {
+          this.bitcoinRate = bitcoinRate;
+        },
+        error => {
+          console.error('Error fetching Bitcoin rate:', error);
+        }
+      );
+    });
   }
-
+  
   formatUserCoins() {
-    this.formattedUserCoins = this.userCoins.toFixed(2)
+    if (this.user) {
+      this.formattedUserCoins = this.user.coins.toFixed(2);
+    }
   }
 }
