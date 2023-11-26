@@ -14,6 +14,10 @@ export class AppComponent implements OnInit {
   isLogin = false
 
   ngOnInit() {
+
+    const storedLoginState = localStorage.getItem('isLogin')
+    this.isLogin = storedLoginState === 'true'
+
     this.subscription = this.contactService.loadContacts()
       .pipe(take(1))
       .subscribe({
@@ -22,6 +26,7 @@ export class AppComponent implements OnInit {
   }
 
   onLogin() {
-    this.isLogin = true
+    this.isLogin = true;
+    localStorage.setItem('isLogin', 'true');
   }
 }
