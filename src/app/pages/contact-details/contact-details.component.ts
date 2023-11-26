@@ -20,9 +20,11 @@ export class ContactDetailsComponent {
   title: string = ''
   contact: Contact | null = null
   contact$!: Observable<Contact>
+  transferAmount: number | null = null
 
   async ngOnInit(): Promise<void> {
     this.contact$ = this.route.data.pipe(map(data => data['contact']))
+
     // this.contact$ = this.route.params.pipe(
     //   switchMap(params => this.contactService.getContactById(params['id']))
     // )
@@ -36,14 +38,17 @@ export class ContactDetailsComponent {
   }
 
   async moveCoins() {
-    const move: Move = {
-      toId: this.contact!._id,
-      to: this.contact!.name,
-      at: Date.now(),
-      amount: 2
-    }
+    if (this.transferAmount !== null && this.transferAmount > 0) {
+      const move: Move = {
+        toId: this.contact!._id,
+        to: this.contact!.name,
+        at: Date.now(),
+        amount: this.transferAmount
+      }
 
-    this.userService.moveFunds(move)
+      this.userService.moveFunds(move)
+      this.transferAmount = null
+    }
   }
 
   onBack() {

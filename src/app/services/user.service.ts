@@ -26,11 +26,16 @@ export class UserService {
     {
       name: "Alex Morgan",
       coins: 100,
-      moves: [] as Move[],
+      moves: [{
+        amount: 2,
+        at: 1701020506936,
+        to: "Loren Asira",
+        toId: "5a56640269f443a5d64b32ca"
+      }] as Move[],
       age: 32,
       address: '1084 Branch Road, FL',
       phone: '904-379-5482',
-      email: 'alexmorgan207@gmail.com',
+      email: 'morganalex10@gmail.com',
     }
     return user
   }

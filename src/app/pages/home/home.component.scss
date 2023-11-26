@@ -4,25 +4,25 @@
     padding: 1rem;
 
     .card {
-            position: relative; 
-            padding: 2rem;
-            margin: 5rem auto;
-            width: 50vw;
-            height: 50vh;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    
-            &::before {
-                content: '';
-                position: absolute;
-                top: 5%;
-                bottom: 5%;
-                left: 50%; 
-                width: 2px;
-                background-color: #00415a; 
-                transform: translateX(-50%);
-            }
+        position: relative;
+        padding: 2rem;
+        margin: 5rem auto;
+        width: 50vw;
+        height: 50vh;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 5%;
+            bottom: 5%;
+            left: 50%;
+            width: 2px;
+            background-color: #00415a;
+            transform: translateX(-50%);
+        }
 
         .user {
             flex-direction: column;
@@ -46,9 +46,31 @@
             .user-detail {
                 align-items: center;
                 font-size: 1rem;
+
                 .icon {
                     color: #00415a;
                     font-size: .9rem;
+                }
+
+                &:last-of-type {
+                    margin-block-end: 1em;
+                }
+            }
+
+
+            .last-transfers {
+                margin-block-start: auto;
+
+                h3 {
+                    color: #00415a;
+                    margin-block-end: .5em;
+                }
+
+                p {
+
+                    &:not(:last-child) {
+                        margin-block-end: 1em;
+                    }
                 }
             }
         }

@@ -73,21 +73,76 @@
             }
         }
 
-        .edit-btn {
-            position: absolute;
-            bottom: 15px;
-            right: 15px;
-            font-size: 25px;
+        .actions {
 
-            background: none;
-            border: none;
-            color: #00719c;
-            transition: color .2s;
+            .edit-btn {
+                position: absolute;
+                bottom: 15px;
+                right: 15px;
+                font-size: 25px;
+                background: none;
+                border: none;
+                color: #00719c;
+                transition: color .2s;
 
-            &:hover {
-                color: #00415a;
+                &:hover {
+                    color: #00415a;
+                }
+            }
+
+            .transfer-section {
+                position: absolute;
+                top: 15px;
+                right: 15px;
+
+                .transfer-money-btn,
+                .transfer-btn {
+                    font-size: 25px;
+                    background: none;
+                    border: none;
+                    color: #00719c;
+                    transition: color .2s;
+
+                    &:hover {
+                        color: #00415a;
+                    }
+                }
+
+                .transfer-input {
+                    font-size: 25px;
+                    width: 50px;
+                    padding: 5px;
+                    font-size: 14px;
+                    -moz-appearance: textfield;
+                    border: 1px solid #00719c;
+                    border-radius: 8px;
+
+                    &:focus {
+                        outline-color: #00415a;
+                    }
+
+                    &::-webkit-inner-spin-button,
+                    &::-webkit-outer-spin-button {
+                        -webkit-appearance: none;
+                        margin: 0;
+                    }
+                }
+
+                .input-container {
+                    position: relative;
+                    display: inline-block;
+
+                    .fa-dollar-sign {
+                        color: #00719c;
+                        position: absolute;
+                        right: 5px;
+                        top: 50%;
+                        transform: translateY(-50%);
+                    }
+                }
             }
         }
+
     }
 
 }

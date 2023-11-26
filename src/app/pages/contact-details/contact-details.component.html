@@ -14,12 +14,27 @@
                     <h1 class="user-detail flex"><i class="fa-solid fa-phone icon"></i> {{contact.phone}}</h1>
                     <h1 class="user-detail flex"><i class="fa-solid fa-at icon"></i> {{contact.email}}</h1>
                 </div>
-                <button [routerLink]="['/contact/edit', contact._id]" class="edit-btn" title="Edit this contact"><i
-                        class="fa-solid fa-user-pen"></i></button>
+                <div class="actions">
+                    <button [routerLink]="['/contact/edit', contact._id]" class="edit-btn" title="Edit this contact">
+                        <i class="fa-solid fa-user-pen"></i>
+                    </button>
+
+                    <div class="transfer-section">
+                        <button *ngIf="!transferAmount" (click)="transferAmount = 1" class="transfer-money-btn"
+                            title="Transfer money">
+                            <i class="fa-solid fa-money-bill-transfer"></i>
+                        </button>
+                        <div class="input-container">
+                            <input *ngIf="transferAmount" type="number" class="transfer-input"
+                                [(ngModel)]="transferAmount" placeholder="Enter amount">
+                            <i *ngIf="transferAmount" class="fa-solid fa-dollar-sign"></i>
+                        </div>
+                        <button *ngIf="transferAmount" (click)="moveCoins()" class="transfer-btn">
+                            <i title="Send money" class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
             </div>
-            <button (click)="moveCoins()" class="transfer-btn"><i class="fa-solid fa-coins"></i> Transfer Funds</button>
         </div>
-        <button (click)="onBack()" class="back-btn" title="Go back"><i
-                class="fa-solid fa-share fa-flip-horizontal"></i></button>
     </div>
 </div>
